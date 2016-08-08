@@ -1,0 +1,31 @@
+package com.cornerkick.controller;
+
+import com.cornerkick.domain.User;
+import com.cornerkick.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import java.util.List;
+
+/**
+ * 
+ * @author cornerkick
+ */
+@Controller
+public class HomeController {
+
+    @Autowired
+    private UserService userService;
+
+    @RequestMapping(value = "/", method=RequestMethod.GET)
+    public String home(Model model) {
+        List<User> userList = userService.getAll();
+
+        model.addAttribute("userList", userList);
+        return "index";
+    }
+
+}

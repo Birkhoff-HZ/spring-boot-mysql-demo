@@ -1,0 +1,17 @@
+.home {
+    width: 600px;
+    margin: 0 auto;
+}
+
+.home h2 {
+    text-align: center;
+}
+
+.home table {
+    margin: 0 auto;
+}
+
+.home table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
